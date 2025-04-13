@@ -81,7 +81,7 @@ const personalData = {
         },
         {
             year: "2011",
-            degree: "BSc, Automation & Control",
+            degree: "BSc, Automation & Control     ",
             institution: "People's Friendship University of Russia"
         },
         {
@@ -93,19 +93,20 @@ const personalData = {
     
     skills: {
         "Leadership & Management": [
-            "Team Leadership",
-            "Project Management",
             "Agile Methodologies",
+            "Cross-functional Collaboration",
+            "Project Planning & Roadmapping",
             "Stakeholder Management",
-            "Cross-team Collaboration",
-            "Mentoring"
+            "Team Building & Culture",
+            "Technical Mentorship (guided 10+ engineers)"
         ],
         "Technical Domain": [
-            "AdTech",
-            "Real-Time Bidding",
-            "Highload Systems",
-            "System Architecture",
-            "Performance Optimization"
+            "AdTech & Real-Time Bidding",
+            "CI/CD Pipelines",
+            "Distributed Highload Systems",
+            "Performance Optimization",
+            "Site Reliability Engineering",
+            "System Architecture"
         ]
     }
 }; 
