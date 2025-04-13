@@ -1,10 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>vamihalev.github.io</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vasilii Mikhalev - Software Engineering Lead</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
+    <header>
+        <h1 id="fullName">LOADING...</h1>
+        <p class="subtitle" id="jobTitle">LOADING...</p>
+        <div class="contact-info">
+            <p id="contactDetails">Loading contact information...</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <h2>PERSONAL STATEMENT</h2>
+        <p id="personalStatement">Loading personal statement...</p>
+    </section>
+
+    <section class="section">
+        <h2>WORK EXPERIENCE</h2>
+        <div id="workExperience">
+            <!-- Work experience will be loaded dynamically -->
+            <p>Loading work experience...</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>EDUCATION</h2>
+        <div class="education-container" id="education">
+            <!-- Education will be loaded dynamically -->
+            <p>Loading education...</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>SKILLS</h2>
+        <div class="skills-container" id="skills">
+            <!-- Skills will be loaded dynamically -->
+            <p>Loading skills...</p>
+        </div>
+    </section>
+
+    <script src="data.js"></script>
+    <script>
+        // Populate basic information
+        document.getElementById('fullName').textContent = personalData.name;
+        document.getElementById('jobTitle').textContent = personalData.title;
+        
+        // Format contact details
+        const contactHTML = `${personalData.location} · ${personalData.phone} · <a href="mailto:${personalData.email}">${personalData.email}</a>`;
+        document.getElementById('contactDetails').innerHTML = contactHTML;
+        
+        // Set personal statement
+        document.getElementById('personalStatement').textContent = personalData.statement;
+        
+        // Generate work experience HTML
+        let workHTML = '';
+        personalData.experience.forEach((job, index) => {
+            workHTML += `
+                <div>
+                    <span class="job-date">${job.period}</span>
+                    <h3 class="job-title">${job.title}</h3>
+                    <p class="job-company">${job.company}</p>
+                    <div class="clear"></div>
+                    <ul>
+                        ${job.responsibilities.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                    ${job.projects ? `
+                    <p class="job-projects">
+                        <strong>Projects:</strong> 
+                        ${job.projects.map(project => `<a href="${project.url}" target="_blank">${project.name}</a>`).join(', ')}
+                    </p>
+                    ` : ''}
+                </div>
+                ${index < personalData.experience.length - 1 ? '<div class="job-separator"></div>' : ''}
+            `;
+        });
+        document.getElementById('workExperience').innerHTML = workHTML;
+        
+        // Generate education HTML
+        let educationHTML = '';
+        personalData.education.forEach(edu => {
+            educationHTML += `
+                <div class="education-item">
+                    <span class="education-date">${edu.year}</span>
+                    <h3 class="education-degree">${edu.degree}</h3>
+                    <p class="education-school">${edu.institution}</p>
+                </div>
+            `;
+        });
+        document.getElementById('education').innerHTML = educationHTML;
+        
+        // Generate skills HTML
+        let skillsHTML = '';
+        for (const category in personalData.skills) {
+            skillsHTML += `
+                <div class="skills-column">
+                    <h3>${category}</h3>
+                    <div class="skills-list">
+                        ${personalData.skills[category].map(skill => `<span class="skill-item">${skill}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        document.getElementById('skills').innerHTML = skillsHTML;
+    </script>
 </body>
 </html>
