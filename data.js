@@ -35,7 +35,7 @@ const personalData = {
             responsibilities: [
                 "Led IPONWEB internal bidder (DSP) product (BidCore) real-time engineering team, focusing on system performance and reliability",
                 "Provided framework for joint demand-side projects development across multiple teams, establishing cross-team collaboration patterns",
-                "Mentored junior team members and facilitated knowledge sharing across engineering teams"
+                "Mentored team members and facilitated knowledge sharing across engineering teams"
             ],
             projects: [
                 {
