@@ -2,7 +2,7 @@ const personalData = {
     name: "VASILII MIKHALEV",
     title: "SOFTWARE ENGINEERING LEAD",
     location: "Limassol, Cyprus",
-    phone: "+357 97 603223",
+    phone: "+357 97603223",
     email: "vami02193@gmail.com",
     
     statement: "Software development engineering lead with a track record of delivered successful highload projects across the advertising industry. I believe that people development, processes transparency & planning agility bring best delivery results when blended together. My experience spans from hands-on development to strategic project leadership in the AdTech domain.",
@@ -81,7 +81,7 @@ const personalData = {
         },
         {
             year: "2011",
-            degree: "BSc, Automation & Control     ",
+            degree: "BSc, Automation & Control",
             institution: "People's Friendship University of Russia"
         },
         {
